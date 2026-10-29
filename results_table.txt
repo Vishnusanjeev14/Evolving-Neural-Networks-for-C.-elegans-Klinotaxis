@@ -1,0 +1,42 @@
+==============================================================
+RESULT 1 - HELD-OUT PERFORMANCE (40 unseen start conditions)
+==============================================================
+  Random untrained CTRNN   :  0.002
+  Hand-coded klinokinesis  :  0.339
+  EVOLVED CTRNN (ours)     :  0.741
+  Improvement over baseline: +0.401
+
+==============================================================
+RESULT 2 - ARRIVAL STATISTICS (40 held-out trials)
+==============================================================
+  Mean start distance      : 44.8
+  Mean final distance      : 12.0
+  Trials ending within 10u : 13/40  (32%)
+  Trials ending within 20u : 36/40  (90%)
+  Trials that got closer   : 40/40  (100%)
+
+==============================================================
+RESULT 3 - ROBUSTNESS (generalisation beyond training conditions)
+==============================================================
+  (a) Sensory noise on dC/dt:
+        noise sd=0.0    -> fitness  0.741
+        noise sd=0.001  -> fitness  0.741
+        noise sd=0.005  -> fitness  0.740
+        noise sd=0.01   -> fitness  0.691
+        noise sd=0.02   -> fitness  0.626
+        noise sd=0.05   -> fitness  0.049
+  (b) Unseen gradient widths (trained only on spread=40):
+        spread=20   -> fitness  0.668
+        spread=30   -> fitness  0.736
+        spread=40   -> fitness  0.741  <- trained
+        spread=50   -> fitness  0.660
+        spread=70   -> fitness  0.466
+  (c) Unseen start distances (trained only on 30-60):
+        start r=30-60   -> fitness  0.686  <- trained
+        start r=60-90   -> fitness  0.450
+        start r=90-120  -> fitness  0.166
+
+==============================================================
+FIGURES WRITTEN: fig1_trajectories.png, fig2_learning.png,
+                 fig3_benchmark.png, fig4_robustness.png
+==============================================================
